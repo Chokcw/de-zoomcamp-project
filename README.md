@@ -11,18 +11,28 @@ https://datastudio.google.com/reporting/216f796f-e212-4d7f-bdbb-6ff6a5877761
 
 
 # Running the project
-- Set your bigquery project in the following
+Setup
+Refer to this [video](https://www.youtube.com/watch?v=Hajwnmj0xfQ&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=12) for Terraform and GCP setup
 
-Airflow
+Using Terraform to setup GCP resources
+```bash
+cd terraform
+terraform init
+terraform plan
+terraform apply
+terraform destroy (to remve resources once done)
+```
+
+Running Airflow
 ```bash
 docker-compose up
 ```
 
 
 # Data ingestion by DAG
-ingest_olist_dag
-gcs_to_bq_dag
-bq_transformation_dag
+1. ingest_olist_dag - Download data from source and upload to GCS
+2. gcs_to_bq_dag - Copy data from GCS to Bigquery
+3. bq_transformation_dag
 
 
 # Technologies used

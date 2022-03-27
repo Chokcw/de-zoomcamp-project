@@ -18,7 +18,7 @@ dataset_list = ["customers", "orders", "order_items", "products"]
 # dataset_url = f"https://s3.amazonaws.com/nyc-tlc/trip+data/{dataset_file}"
 path_to_local_home = os.environ.get("AIRFLOW_HOME", "/opt/airflow/")
 
-BIGQUERY_DATASET = os.environ.get("BIGQUERY_DATASET", 'trips_data_all')
+BIGQUERY_DATASET = os.environ.get("BIGQUERY_DATASET", 'olist_data_all')
 
 
 def format_to_parquet(src_file):
@@ -70,7 +70,7 @@ with DAG(
 
     download_dataset_task = BashOperator(
         task_id="download_dataset_task",
-        bash_command=f"kaggle datasets download olistbr/brazilian-ecommerce -p {path_to_local_home} && unzip {path_to_local_home}/brazilian-ecommerce.zip"
+        bash_command=f"kaggle datasets download olistbr/brazilian-ecommerce -p {path_to_local_home} --force && unzip {path_to_local_home}/brazilian-ecommerce.zip"
     )
 
     for dataset in dataset_list:
