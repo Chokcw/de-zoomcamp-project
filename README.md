@@ -7,7 +7,7 @@ find out the states with the most number of orders made and the daily volume of 
 
 # Dashboard
 https://datastudio.google.com/reporting/216f796f-e212-4d7f-bdbb-6ff6a5877761
-[Dashboard](./images/dashboard.png)
+![Dashboard](./images/dashboard.png)
 
 
 # Running the project
