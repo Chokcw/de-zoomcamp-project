@@ -29,10 +29,12 @@ docker-compose up
 ```
 
 
-# Data ingestion by DAG
+### Data ingestion by DAG
+Run the following DAGs in sequence to generate the necessary tables
+
 1. ingest_olist_dag - Download data from source and upload to GCS
 2. gcs_to_bq_dag - Copy data from GCS to Bigquery
-3. bq_transformation_dag
+3. bq_transformation_dag - Aggregated table storing transformations to improve dashboard query performance 
 
 
 # Technologies used
@@ -49,4 +51,9 @@ We have used Airflow to orchestrate the ingestion of data to GCS and moving the 
 
 
 # Acknowledgement
-I am very grateful to the following instructors who have spent a great amount of time and effort ti put together the materials at [Data Engineering Zoomcamp](https://github.com/DataTalksClub/data-engineering-zoomcamp)
+I am very grateful to the following instructors who have spent a great amount of time and effort to put together the materials at [Data Engineering Zoomcamp](https://github.com/DataTalksClub/data-engineering-zoomcamp)
+
+- Ankush Khanna (https://linkedin.com/in/ankushkhanna2)
+- Sejal Vaidya (https://linkedin.com/in/vaidyasejal)
+- Victoria Perez Mola (https://www.linkedin.com/in/victoriaperezmola/)
+- Alexey Grigorev (https://linkedin.com/in/agrigorev)

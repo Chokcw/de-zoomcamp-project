@@ -12,7 +12,7 @@ PROJECT_ID = os.environ.get("GCP_PROJECT_ID")
 BUCKET = os.environ.get("GCP_GCS_BUCKET")
 
 path_to_local_home = os.environ.get("AIRFLOW_HOME", "/opt/airflow/")
-BIGQUERY_DATASET = os.environ.get("BIGQUERY_DATASET", 'olist')
+BIGQUERY_DATASET = os.environ.get("BIGQUERY_DATASET", 'olist_data_all')
 
 DATASET = "olist"
 DATASET_LIST = {
@@ -45,9 +45,10 @@ with DAG(
     max_active_runs=1,
     tags=['dtc-de'],
 ) as dag:
+    sql_raw = read_file("sql/aggregate.sql")
 
     CREATE_AGGREGATED_TBL_QUERY = (
-        read_file("sql/aggregate.sql".format(BIGQUERY_DATASET=BIGQUERY_DATASET, DATASET=DATASET))
+        sql_raw.format(BIGQUERY_DATASET=BIGQUERY_DATASET, DATASET=DATASET)
     )
 
     # Create a partitioned table from external table
