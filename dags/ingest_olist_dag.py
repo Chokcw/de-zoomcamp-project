@@ -70,7 +70,7 @@ with DAG(
 
     download_dataset_task = BashOperator(
         task_id="download_dataset_task",
-        bash_command=f"kaggle datasets download olistbr/brazilian-ecommerce -p {path_to_local_home} --force && unzip {path_to_local_home}/brazilian-ecommerce.zip"
+        bash_command=f"kaggle datasets download olistbr/brazilian-ecommerce -p {path_to_local_home} --force && unzip {path_to_local_home}/brazilian-ecommerce.zip -d {path_to_local_home}"
     )
 
     for dataset in dataset_list:
@@ -99,4 +99,4 @@ with DAG(
 
 
 
-    download_dataset_task >> format_to_parquet_task >> local_to_gcs_task
+        download_dataset_task >> format_to_parquet_task >> local_to_gcs_task

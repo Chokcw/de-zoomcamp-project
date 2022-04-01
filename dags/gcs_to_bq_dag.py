@@ -99,4 +99,4 @@ with DAG(
             }
         )
 
-    move_files_gcs_task >> bigquery_external_table_task >> bq_create_staging_table_job
+        move_files_gcs_task >> bigquery_external_table_task >> bq_create_staging_table_job
