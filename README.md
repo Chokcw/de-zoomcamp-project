@@ -2,7 +2,7 @@
 [This dataset from Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) provides information of orders made at [Olist Store](https://olist.com/pt-br/), a Brazilian Ecommerce, from 2016 to 2018. 
 
 In this project, we will build a data pipeline to ingest and process the data, and eventually visualise the data in Google Bigquery.
-find out the states with the most number of orders made and the daily volume of orders from these states.
+We will build a dashboard to find out the states with the most number of orders made and the daily volume of orders from these states.
 
 
 # Dashboard
