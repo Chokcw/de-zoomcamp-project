@@ -20,7 +20,7 @@ cd terraform
 terraform init
 terraform plan
 terraform apply
-terraform destroy (to remve resources once done)
+terraform destroy (to remove resources once done)
 ```
 
 Running Airflow
